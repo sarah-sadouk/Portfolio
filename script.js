@@ -135,6 +135,38 @@
   }
 
   // =========================================================
+  // Spotlight + tilt 3D sur les cartes interactives
+  // =========================================================
+  const interactiveCards = document.querySelectorAll(
+    '.comp-card, .timeline-body, .lang-card, .contact-card:not(.static)'
+  );
+
+  interactiveCards.forEach(card => {
+    card.addEventListener('pointermove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const mx = (x / rect.width) * 100;
+      const my = (y / rect.height) * 100;
+      card.style.setProperty('--mx', mx + '%');
+      card.style.setProperty('--my', my + '%');
+
+      // Tilt 3D uniquement sur les comp-card (les plus "massives")
+      if (card.classList.contains('comp-card')) {
+        const rotateY = ((x / rect.width) - 0.5) * 6;   // -3deg ... +3deg
+        const rotateX = ((y / rect.height) - 0.5) * -6; // +3deg ... -3deg
+        card.style.setProperty('--rx', rotateX.toFixed(2) + 'deg');
+        card.style.setProperty('--ry', rotateY.toFixed(2) + 'deg');
+      }
+    }, { passive: true });
+
+    card.addEventListener('pointerleave', () => {
+      card.style.setProperty('--rx', '0deg');
+      card.style.setProperty('--ry', '0deg');
+    });
+  });
+
+  // =========================================================
   // Engrenages pilotés par le scroll — rotation simultanée
   // Chaque engrenage tourne en sens alterné (engrenage 1 horaire,
   // engrenage 2 anti-horaire, etc.) pour donner l'illusion d'une
