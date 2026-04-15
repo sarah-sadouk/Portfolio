@@ -296,20 +296,16 @@ main { padding-top: 0; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(56px, 10vw, 128px);
-  line-height: 0.95;
+  font-weight: 700;
+  font-size: clamp(56px, 10vw, 120px);
+  line-height: 1;
   margin: 0 0 24px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  color: var(--text);
 }
 
 .title-line { display: block; }
-.title-line.accent {
-  background: linear-gradient(135deg, var(--copper) 0%, var(--copper-bright) 60%, var(--steel-bright) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+.title-line.accent { color: var(--copper-bright); }
 
 .hero-subtitle {
   font-size: clamp(18px, 2.2vw, 24px);
