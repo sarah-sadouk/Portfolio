@@ -78,12 +78,7 @@
         return;
       }
 
-      // Détection endpoint non configuré
       const endpoint = form.getAttribute('action') || '';
-      if (endpoint.includes('YOUR_FORMSPREE_ID')) {
-        setFeedback("⚠ Formulaire non configuré — remplace YOUR_FORMSPREE_ID dans index.html par l'ID Formspree.", 'error');
-        return;
-      }
 
       submit.disabled = true;
       if (btnLabel) btnLabel.textContent = 'Envoi…';
