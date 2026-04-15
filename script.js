@@ -139,22 +139,40 @@
     });
   }
 
-  // Parallax très léger sur les engrenages (respecte prefers-reduced-motion)
+  // =========================================================
+  // Engrenages pilotés par le scroll — rotation simultanée
+  // Chaque engrenage tourne en sens alterné (engrenage 1 horaire,
+  // engrenage 2 anti-horaire, etc.) pour donner l'illusion d'une
+  // chaîne mécanique qui s'actionne quand la page scrolle.
+  // =========================================================
   const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!prefersReduce) {
-    const gears = document.querySelectorAll('.gear');
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
+    const gears = Array.from(document.querySelectorAll('.gear'));
+    if (gears.length) {
+      // Coefficient : degrés par pixel scrollé (identique à tous = simultané)
+      const DEG_PER_PX = 0.35;
+
+      // Sens alternés pour effet d'engrenage qui s'entraîne
+      const directions = gears.map((_, i) => (i % 2 === 0 ? 1 : -1));
+
+      let ticking = false;
+      const updateGears = () => {
         const y = window.scrollY;
-        gears.forEach((g, i) => {
-          const depth = (i + 1) * 0.04;
-          g.style.translate = `0 ${y * depth * 0.5}px`;
+        const baseRotation = y * DEG_PER_PX;
+        gears.forEach((gear, i) => {
+          gear.style.transform = `rotate(${baseRotation * directions[i]}deg)`;
         });
         ticking = false;
-      });
-    }, { passive: true });
+      };
+
+      window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(updateGears);
+      }, { passive: true });
+
+      // Position initiale
+      updateGears();
+    }
   }
 })();

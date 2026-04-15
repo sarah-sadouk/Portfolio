@@ -33,7 +33,7 @@
   --t-fast: 180ms cubic-bezier(.2,.8,.2,1);
   --t-med: 360ms cubic-bezier(.2,.8,.2,1);
 
-  --font-display: 'Orbitron', 'Inter', system-ui, sans-serif;
+  --font-display: 'Syne', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
 
   --container: 1200px;
@@ -99,19 +99,16 @@ a { color: inherit; text-decoration: none; }
   filter: drop-shadow(0 0 1px rgba(199,125,58,.25));
 }
 
-.gear-1 { width: 520px; height: 520px; top: -120px; right: -140px; color: rgba(199,125,58,.10); animation: rotate 60s linear infinite; }
-.gear-2 { width: 320px; height: 320px; top: 22%; left: -80px; color: rgba(93,138,168,.08); animation: rotate-rev 45s linear infinite; }
-.gear-3 { width: 420px; height: 420px; top: 55%; right: -110px; color: rgba(199,125,58,.07); animation: rotate 80s linear infinite; }
-.gear-4 { width: 260px; height: 260px; top: 80%; left: 12%; color: rgba(93,138,168,.07); animation: rotate-rev 55s linear infinite; }
-.gear-5 { width: 180px; height: 180px; top: 38%; left: 58%; color: rgba(199,125,58,.06); animation: rotate 35s linear infinite; }
-.gear-6 { width: 380px; height: 380px; bottom: -120px; left: -100px; color: rgba(199,125,58,.08); animation: rotate-rev 70s linear infinite; }
+/* Position et taille des engrenages (rotation pilotée par JS au scroll) */
+.gear-1 { width: 520px; height: 520px; top: -120px; right: -140px; color: rgba(199,125,58,.10); }
+.gear-2 { width: 320px; height: 320px; top: 22%; left: -80px; color: rgba(93,138,168,.08); }
+.gear-3 { width: 420px; height: 420px; top: 55%; right: -110px; color: rgba(199,125,58,.07); }
+.gear-4 { width: 260px; height: 260px; top: 80%; left: 12%; color: rgba(93,138,168,.07); }
+.gear-5 { width: 180px; height: 180px; top: 38%; left: 58%; color: rgba(199,125,58,.06); }
+.gear-6 { width: 380px; height: 380px; bottom: -120px; left: -100px; color: rgba(199,125,58,.08); }
 
-@keyframes rotate { to { transform: rotate(360deg); } }
-@keyframes rotate-rev { to { transform: rotate(-360deg); } }
-
-@media (prefers-reduced-motion: reduce) {
-  .gear { animation: none !important; }
-}
+/* Rotation du cercle pointillé autour de la photo (indépendant du scroll) */
+@keyframes rotateRing { to { transform: rotate(360deg); } }
 
 /* =========================================================
    Navigation
@@ -155,7 +152,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 50%;
   color: var(--copper);
   font-size: 13px;
-  font-weight: 900;
+  font-weight: 800;
   background: rgba(199,125,58,.06);
 }
 
@@ -299,7 +296,7 @@ main { padding-top: 0; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-weight: 900;
+  font-weight: 800;
   font-size: clamp(56px, 10vw, 128px);
   line-height: 0.95;
   margin: 0 0 24px;
@@ -482,7 +479,7 @@ main { padding-top: 0; }
 .photo-initials {
   font-family: var(--font-display);
   font-size: 52px;
-  font-weight: 900;
+  font-weight: 800;
   background: linear-gradient(135deg, var(--copper), var(--copper-bright));
   -webkit-background-clip: text;
   background-clip: text;
@@ -493,7 +490,10 @@ main { padding-top: 0; }
   inset: -8px;
   border: 1px dashed rgba(199,125,58,.35);
   border-radius: 50%;
-  animation: rotate 30s linear infinite;
+  animation: rotateRing 30s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-ring { animation: none; }
 }
 
 .info-list {
