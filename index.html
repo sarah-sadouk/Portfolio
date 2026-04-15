@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Sarah Sadouk, ingénieure spécialisée en Risques Industriels et Maintenance, basée à Lille." />
+  <meta name="author" content="Sarah Sadouk" />
+  <title>Sarah Sadouk — Ingénieure Risques Industriels & Maintenance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Engrenages d'arrière-plan -->
+  <div class="gears-bg" aria-hidden="true">
+    <svg class="gear gear-1" viewBox="-100 -100 200 200"><use href="#gear-shape-12" /></svg>
+    <svg class="gear gear-2" viewBox="-100 -100 200 200"><use href="#gear-shape-8" /></svg>
+    <svg class="gear gear-3" viewBox="-100 -100 200 200"><use href="#gear-shape-12" /></svg>
+    <svg class="gear gear-4" viewBox="-100 -100 200 200"><use href="#gear-shape-16" /></svg>
+    <svg class="gear gear-5" viewBox="-100 -100 200 200"><use href="#gear-shape-8" /></svg>
+    <svg class="gear gear-6" viewBox="-100 -100 200 200"><use href="#gear-shape-12" /></svg>
+    <div class="grid-overlay"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <!-- Définitions SVG réutilisables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Engrenage 12 dents -->
+      <g id="gear-shape-12">
+        <g>
+          <rect x="-12" y="-98" width="24" height="22" rx="3" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(30)" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(60)" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(90)" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(120)" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(150)" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(180)" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(210)" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(240)" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(270)" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(300)" />
+          <rect x="-12" y="-98" width="24" height="22" rx="3" transform="rotate(330)" />
+          <circle r="78" />
+          <circle r="28" fill="transparent" stroke="currentColor" stroke-width="10" />
+          <circle r="8" />
+          <!-- Branches -->
+          <rect x="-6" y="-62" width="12" height="42" rx="2" />
+          <rect x="-6" y="-62" width="12" height="42" rx="2" transform="rotate(90)" />
+          <rect x="-6" y="-62" width="12" height="42" rx="2" transform="rotate(180)" />
+          <rect x="-6" y="-62" width="12" height="42" rx="2" transform="rotate(270)" />
+        </g>
+      </g>
+      <!-- Engrenage 8 dents -->
+      <g id="gear-shape-8">
+        <g>
+          <rect x="-14" y="-96" width="28" height="26" rx="4" />
+          <rect x="-14" y="-96" width="28" height="26" rx="4" transform="rotate(45)" />
+          <rect x="-14" y="-96" width="28" height="26" rx="4" transform="rotate(90)" />
+          <rect x="-14" y="-96" width="28" height="26" rx="4" transform="rotate(135)" />
+          <rect x="-14" y="-96" width="28" height="26" rx="4" transform="rotate(180)" />
+          <rect x="-14" y="-96" width="28" height="26" rx="4" transform="rotate(225)" />
+          <rect x="-14" y="-96" width="28" height="26" rx="4" transform="rotate(270)" />
+          <rect x="-14" y="-96" width="28" height="26" rx="4" transform="rotate(315)" />
+          <circle r="74" />
+          <circle r="32" fill="transparent" stroke="currentColor" stroke-width="8" />
+          <circle r="10" />
+        </g>
+      </g>
+      <!-- Engrenage 16 dents -->
+      <g id="gear-shape-16">
+        <g>
+          <rect x="-8" y="-99" width="16" height="18" rx="2" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(22.5)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(45)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(67.5)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(90)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(112.5)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(135)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(157.5)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(180)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(202.5)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(225)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(247.5)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(270)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(292.5)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(315)" />
+          <rect x="-8" y="-99" width="16" height="18" rx="2" transform="rotate(337.5)" />
+          <circle r="82" />
+          <circle r="30" fill="transparent" stroke="currentColor" stroke-width="6" />
+          <circle r="6" />
+        </g>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- Barre de navigation -->
+  <nav class="nav">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-mark">SS</span>
+      <span class="logo-text">Sarah Sadouk</span>
+    </a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#experiences">Parcours</a></li>
+      <li><a href="#formations">Formation</a></li>
+      <li><a href="#contact" class="cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="pulse"></span>
+          Disponible pour opportunités en alternance / stage
+        </div>
+        <h1 class="hero-title">
+          <span class="title-line">Sarah</span>
+          <span class="title-line accent">Sadouk</span>
+        </h1>
+        <p class="hero-subtitle">
+          Ingénieure <strong>Risques Industriels</strong> &amp; <strong>Maintenance</strong>
+        </p>
+        <p class="hero-desc">
+          Rigoureuse et engagée, je mets l'analyse, la fiabilité et l'amélioration continue au service de la performance industrielle.
+        </p>
+        <div class="hero-actions">
+          <a href="#experiences" class="btn btn-primary">
+            Voir mon parcours
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Me contacter</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Années de formation technique</span></div>
+          <div class="stat"><span class="stat-num">5</span><span class="stat-label">GMAO maîtrisées</span></div>
+          <div class="stat"><span class="stat-num">4</span><span class="stat-label">Langues parlées</span></div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Descendre">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="about" class="section">
+      <div class="section-head">
+        <span class="section-num">01 /</span>
+        <h2 class="section-title">À propos</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lead">
+            Spécialisée en <strong>Risques Industriels et Maintenance</strong>, je suis animée par une recherche constante de progression et d'excellence technique.
+          </p>
+          <p>
+            Rigoureuse et engagée, je trouve ma valeur ajoutée dans la résolution de problèmes complexes, l'atteinte de résultats concrets et le dépassement continu de mes compétences. Je m'investis pleinement dans les environnements qui stimulent l'apprentissage et valorisent la performance.
+          </p>
+          <div class="traits">
+            <div class="trait">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+              <div><strong>Adaptabilité</strong><span>énergie, chimie, agroalimentaire, BTP</span></div>
+            </div>
+            <div class="trait">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <div><strong>Rigueur</strong><span>Respect strict des consignes et normes</span></div>
+            </div>
+            <div class="trait">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+              <div><strong>Analyse</strong><span>Résolution méthodique de problèmes</span></div>
+            </div>
+            <div class="trait">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <div><strong>Autonomie</strong><span>Esprit d'équipe affirmé</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <div class="about-photo">
+            <div class="photo-frame">
+              <div class="photo-initials">SS</div>
+              <div class="photo-ring"></div>
+            </div>
+          </div>
+          <dl class="info-list">
+            <div><dt>Localisation</dt><dd>Lille, France</dd></div>
+            <div><dt>Statut</dt><dd>Master 2 — ULCO Dunkerque</dd></div>
+            <div><dt>Spécialité</dt><dd>Risques Industriels &amp; Maintenance</dd></div>
+            <div><dt>Centres d'intérêt</dt><dd>Échecs · Langues · Randonnées</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section id="competences" class="section">
+      <div class="section-head">
+        <span class="section-num">02 /</span>
+        <h2 class="section-title">Compétences techniques</h2>
+        <p class="section-intro">De la GMAO à la programmation bas niveau, un socle technique polyvalent au service de l'industrie.</p>
+      </div>
+
+      <div class="comp-grid">
+        <article class="comp-card">
+          <header>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+            <h3>GMAO &amp; Maintenance</h3>
+          </header>
+          <ul class="tag-list">
+            <li>SAP</li><li>Maximo</li><li>Optimaint</li><li>Beeldi</li><li>SamFm</li>
+            <li>AMDEC</li><li>Analyse de fiabilité</li><li>KPI maintenance</li>
+            <li>Gammes de maintenance</li><li>Codification</li>
+          </ul>
+        </article>
+
+        <article class="comp-card">
+          <header>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+            <h3>Qualité &amp; Sécurité</h3>
+          </header>
+          <ul class="tag-list">
+            <li>ISO 9001</li><li>ISO 14001</li><li>ISO 45001</li><li>Référentiel MASE</li>
+            <li>ICPE</li><li>ATEX</li><li>DUERP</li><li>Plans de prévention</li>
+            <li>Audits chantier</li>
+          </ul>
+        </article>
+
+        <article class="comp-card">
+          <header>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <h3>Amélioration continue</h3>
+          </header>
+          <ul class="tag-list">
+            <li>Lean Yellow Belt</li><li>PDCA</li><li>Méthode A3</li><li>5 Pourquoi</li>
+            <li>MRP2</li><li>Johnson</li><li>PERT</li><li>Gantt</li>
+            <li>Standardisation</li>
+          </ul>
+        </article>
+
+        <article class="comp-card">
+          <header>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+            <h3>CAO &amp; Simulation</h3>
+          </header>
+          <ul class="tag-list">
+            <li>AutoCAD</li><li>Matlab</li><li>Maxwell</li><li>FEMM</li>
+            <li>Proteus</li><li>Step7</li><li>Labview</li><li>Blender 3D</li>
+          </ul>
+        </article>
+
+        <article class="comp-card">
+          <header>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <h3>Programmation</h3>
+          </header>
+          <ul class="tag-list">
+            <li>Python</li><li>C / C++</li><li>JavaScript</li><li>VBA</li>
+            <li>HTML / CSS</li><li>PHP</li><li>MySQL</li><li>Assembleur</li>
+          </ul>
+        </article>
+
+        <article class="comp-card">
+          <header>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+            <h3>Pack Office &amp; Data</h3>
+          </header>
+          <ul class="tag-list">
+            <li>Excel avancé</li><li>Power BI</li><li>Power Apps</li>
+            <li>Word</li><li>PowerPoint</li>
+          </ul>
+        </article>
+
+        <article class="comp-card">
+          <header>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
+            <h3>Création &amp; Design</h3>
+          </header>
+          <ul class="tag-list">
+            <li>Adobe Photoshop</li><li>Adobe Illustrator</li><li>Blender 3D</li>
+          </ul>
+        </article>
+
+        <article class="comp-card">
+          <header>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <h3>Habilitations</h3>
+          </header>
+          <ul class="tag-list">
+            <li>H0</li><li>B1V</li><li>BS</li><li>BE manœuvre</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPÉRIENCES -->
+    <section id="experiences" class="section">
+      <div class="section-head">
+        <span class="section-num">03 /</span>
+        <h2 class="section-title">Parcours professionnel</h2>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline-item">
+          <div class="timeline-date">
+            <span class="date-start">Sept. 2025</span>
+            <span class="date-end">En cours</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-head">
+              <h3>Chargée d'amélioration continue</h3>
+              <span class="timeline-company">Le Groupe La Poste · Lille</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Résolution de problèmes par la <strong>méthode A3</strong> (causes racines, plan d'action, PDCA)</li>
+              <li>Identification d'axes d'amélioration et standardisation des procédures opérationnelles de maintenance</li>
+              <li>Déploiement des outils <strong>Lean management (Yellow Belt)</strong></li>
+              <li>Accompagnement et montée en compétences des équipes terrain</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-date">
+            <span class="date-start">Avr. 2025</span>
+            <span class="date-end">Août 2025</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-head">
+              <h3>Stagiaire Méthodes GMAO</h3>
+              <span class="timeline-company">Gecina · Paris</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Codification des équipements et intégration dans la <strong>GMAO</strong></li>
+              <li>Étiquetage des équipements (Ptouch-Editor) et respect des nomenclatures</li>
+              <li>Mise en place des <strong>gammes de maintenance</strong> et fiabilisation des données</li>
+              <li>Pilotage de la GMAO et suivi des indicateurs de performance maintenance</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-date">
+            <span class="date-start">2022</span>
+            <span class="date-end">2023</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-head">
+              <h3>Technicienne d'installation chauffage</h3>
+              <span class="timeline-company">Gasolec — Maintenance d'énergies · Algérie</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Raccordement électrique des équipements de chauffage</li>
+              <li>Mise en place et câblage des armoires électriques</li>
+              <li>Détection et diagnostic de dysfonctionnements sur site</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- FORMATIONS -->
+    <section id="formations" class="section">
+      <div class="section-head">
+        <span class="section-num">04 /</span>
+        <h2 class="section-title">Formation</h2>
+      </div>
+
+      <ol class="timeline timeline-alt">
+        <li class="timeline-item">
+          <div class="timeline-date">
+            <span class="date-start">2025</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-head">
+              <h3>Habilitation Électrique</h3>
+              <span class="timeline-company">IUT Littoral Côte d'Opale · Dunkerque</span>
+            </div>
+            <p class="timeline-lead">Habilitations <strong>H0, B1V, BS, BE manœuvre</strong></p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-date">
+            <span class="date-start">Sept. 2025</span>
+            <span class="date-end">En cours</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-head">
+              <h3>Master 2 — Risques Industriels &amp; Maintenance</h3>
+              <span class="timeline-company">Université du Littoral Côte d'Opale · Dunkerque</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Maintenance industrielle — AMDEC, analyse de fiabilité, GMAO</li>
+              <li>Analyse et suivi des KPI, gestion des stocks, optimisation des flux (MRP2, Johnson, PERT, Gantt)</li>
+              <li>Méthodologie DUERP, normes ISO 9001 / 14001 / 45001, référentiel MASE</li>
+              <li>Réglementation ICPE, ATEX, plans de prévention &amp; protocoles de sécurité</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-date">
+            <span class="date-start">2018</span>
+            <span class="date-end">2020</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-head">
+              <h3>Master 2 — Machines Électriques</h3>
+              <span class="timeline-company">Université Mouloud Mammeri · Algérie</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Maintenance préventive des machines électriques</li>
+              <li>Automatisation, variateurs de fréquence, contrôles à distance</li>
+              <li>CAO des machines électriques</li>
+              <li><strong>PFE</strong> — Transmission d'énergie électrique sans fil : dimensionnement et modélisation pour la recharge</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-date">
+            <span class="date-start">2015</span>
+            <span class="date-end">2018</span>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline-head">
+              <h3>Licence — Électrotechnique</h3>
+              <span class="timeline-company">Université Mouloud Mammeri · Algérie</span>
+            </div>
+            <ul class="timeline-points">
+              <li>Lecture et interprétation des schémas électriques</li>
+              <li>Analyse de pannes (moteurs, câblage, alimentation)</li>
+              <li>Fiabilité des systèmes électriques &amp; électronique de puissance</li>
+              <li><strong>Projet</strong> — Commande d'un moteur pas à pas avec Arduino</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- LANGUES -->
+    <section id="langues" class="section">
+      <div class="section-head">
+        <span class="section-num">05 /</span>
+        <h2 class="section-title">Langues</h2>
+      </div>
+      <div class="lang-grid">
+        <div class="lang-card">
+          <span class="lang-flag">FR</span>
+          <h3>Français</h3>
+          <div class="lang-bar"><span style="width:95%"></span></div>
+          <span class="lang-level">Avancé</span>
+        </div>
+        <div class="lang-card">
+          <span class="lang-flag">EN</span>
+          <h3>Anglais</h3>
+          <div class="lang-bar"><span style="width:85%"></span></div>
+          <span class="lang-level">Avancé</span>
+        </div>
+        <div class="lang-card">
+          <span class="lang-flag">KAB</span>
+          <h3>Kabyle</h3>
+          <div class="lang-bar"><span style="width:100%"></span></div>
+          <span class="lang-level">Maternelle</span>
+        </div>
+        <div class="lang-card">
+          <span class="lang-flag">ES</span>
+          <h3>Espagnol</h3>
+          <div class="lang-bar"><span style="width:25%"></span></div>
+          <span class="lang-level">Débutant</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="section-head">
+        <span class="section-num">06 /</span>
+        <h2 class="section-title">Entrons en contact</h2>
+        <p class="section-intro">Une opportunité, un projet, ou simplement envie d'échanger ? Je suis joignable sur les canaux ci-dessous.</p>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:sarah.sadouk@outlook.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>
+            <span class="contact-label">E-mail</span>
+            <span class="contact-value">sarah.sadouk@outlook.com</span>
+          </div>
+        </a>
+
+        <a class="contact-card" href="tel:+33780833191">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <span class="contact-label">Téléphone</span>
+            <span class="contact-value">07 80 83 31 91</span>
+          </div>
+        </a>
+
+        <a class="contact-card" href="https://www.linkedin.com/in/sarahsadouk-0279a5334" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <div>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">sarahsadouk</span>
+          </div>
+        </a>
+
+        <div class="contact-card static">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <span class="contact-label">Localisation</span>
+            <span class="contact-value">Lille, France</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire de contact (Formspree) -->
+      <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+        <h3 class="form-title">Envoyez-moi un message</h3>
+
+        <div class="form-row">
+          <label class="field">
+            <span class="field-label">Nom complet <em>*</em></span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+          <label class="field">
+            <span class="field-label">E-mail <em>*</em></span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="field-label">Sujet <em>*</em></span>
+          <input type="text" name="subject" required />
+        </label>
+
+        <label class="field">
+          <span class="field-label">Message <em>*</em></span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <label class="field-check">
+          <input type="checkbox" name="rgpd-consent" required />
+          <span>
+            J'accepte que mes données (nom, e-mail, message) soient collectées et traitées par Sarah Sadouk dans le seul but de répondre à ma demande, conformément au <a href="mentions-legales.html" target="_blank" rel="noopener">RGPD et aux mentions légales</a>. Je peux exercer mes droits à tout moment en écrivant à l'adresse e-mail indiquée.
+          </span>
+        </label>
+
+        <button type="submit" class="btn btn-primary form-submit">
+          <span class="btn-label">Envoyer le message</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+
+        <p class="form-feedback" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Bannière d'information RGPD -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc" hidden>
+    <div class="cookie-inner">
+      <h3 id="cookie-title">Respect de votre vie privée</h3>
+      <p id="cookie-desc">
+        Ce site n'utilise <strong>aucun cookie de suivi</strong>. Seul le stockage local de votre navigateur est utilisé pour mémoriser ce choix. Pour en savoir plus, consultez les <a href="mentions-legales.html">mentions légales &amp; RGPD</a>.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-primary" id="cookie-accept">J'ai compris</button>
+        <a href="mentions-legales.html" class="btn btn-ghost">En savoir plus</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Sarah Sadouk — Tous droits réservés.</span>
+      <span class="footer-meta">
+        <a href="mentions-legales.html">Mentions légales &amp; RGPD</a>
+        <span class="sep">·</span>
+        <a href="https://github.com/sarah-sadouk/Portfolio/blob/main/LICENSE" target="_blank" rel="noopener">Licence MIT</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
