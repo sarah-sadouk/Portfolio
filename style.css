@@ -1207,8 +1207,27 @@ main { padding-top: 0; }
 /* =========================================================
    Responsive
    ========================================================= */
+/* =========================================================
+   RESPONSIVE — Tablettes (<= 960px)
+   ========================================================= */
 @media (max-width: 960px) {
-  .about-grid { grid-template-columns: 1fr; }
+  /* Arrière-plan allégé : 3 engrenages au lieu de 4, tailles réduites */
+  .gear-1 { width: 360px; height: 360px; top: -90px; right: -100px; }
+  .gear-2 { width: 240px; height: 240px; top: 22%; left: -70px; }
+  .gear-3 { display: none; }
+  .gear-6 { width: 280px; height: 280px; bottom: -90px; left: -80px; }
+
+  .glow-c { display: none; }
+  .glow-a, .glow-b, .glow-d { filter: blur(50px); }
+
+  /* Moitié des particules suffisent */
+  .particle.p4,
+  .particle.p7,
+  .particle.p10,
+  .particle.p12 { display: none; }
+
+  /* Layout */
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
   .about-card { position: static; }
 
   .timeline::before { left: 20px; }
@@ -1222,7 +1241,43 @@ main { padding-top: 0; }
   .date-start, .date-end { display: inline; margin-right: 8px; }
 }
 
+/* =========================================================
+   RESPONSIVE — Mobile (<= 720px)
+   ========================================================= */
 @media (max-width: 720px) {
+  /* Arrière-plan quasiment nu : 1 engrenage discret en haut à droite */
+  .gear-2,
+  .gear-3,
+  .gear-6 { display: none; }
+  .gear-1 {
+    width: 260px; height: 260px;
+    top: -70px; right: -80px;
+    opacity: 0.55;
+    filter: drop-shadow(0 0 20px rgba(199,125,58,.1));
+  }
+
+  /* Halos : un seul en haut + un doux en bas */
+  .glow-b,
+  .glow-c { display: none; }
+  .glow-a { width: 380px; height: 380px; top: -120px; right: -120px; opacity: 0.6; }
+  .glow-d { width: 320px; height: 320px; bottom: -100px; opacity: 0.5; }
+
+  /* Beaucoup moins de particules (batterie + lisibilité) */
+  .particle.p2,
+  .particle.p4,
+  .particle.p6,
+  .particle.p7,
+  .particle.p8,
+  .particle.p10,
+  .particle.p11,
+  .particle.p12 { display: none; }
+
+  /* Circuits et scan trop bruyants sur petit écran */
+  .circuit { display: none; }
+  .grid-overlay { opacity: .12; background-size: 56px 56px; }
+  .scan-beam { opacity: 0.25; }
+
+  /* Navigation mobile */
   .nav-toggle { display: flex; }
   .nav-links {
     position: fixed;
@@ -1246,12 +1301,68 @@ main { padding-top: 0; }
   .nav-links a { padding: 14px 12px; width: 100%; }
   .nav-links a.cta { margin-left: 0; margin-top: 6px; text-align: center; }
 
+  /* Section spacing plus compact */
+  .section { padding: clamp(64px, 12vw, 90px) 20px; }
+  .section-head { margin-bottom: 36px; }
+
+  /* Hero */
+  .hero { padding: 100px 20px 60px; min-height: auto; }
+  .hero-actions { gap: 10px; margin-bottom: 56px; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-stats { gap: 24px; padding-top: 28px; }
+  .stat-num { font-size: 28px; }
+
+  /* À propos */
   .traits { grid-template-columns: 1fr; }
-  .hero-stats { gap: 24px; }
-  .stat-num { font-size: 30px; }
+  .about-card { padding: 28px 20px; }
+  .photo-frame { width: 140px; height: 140px; }
+  .photo-initials { font-size: 44px; }
+  .info-list > div { flex-direction: column; gap: 2px; align-items: flex-start; }
+  .info-list dd { text-align: left; }
 
+  /* Compétences */
+  .comp-grid { grid-template-columns: 1fr; gap: 14px; }
+  .comp-card { padding: 22px 18px; transform: none !important; } /* on désactive le tilt 3D au tactile */
+  .comp-card:hover { transform: translateY(-3px) !important; }
+
+  /* Langues */
+  .lang-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .lang-card { padding: 18px 14px; }
+
+  /* Timeline */
   .timeline-head { flex-direction: column; gap: 4px; }
+  .timeline-body { padding: 20px 18px; }
 
-  .form-row { grid-template-columns: 1fr; }
-  .cookie-banner { padding: 18px; }
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-card { padding: 18px 20px; }
+  .form-row { grid-template-columns: 1fr; gap: 16px; }
+  .contact-form { gap: 16px; }
+  .form-submit { width: 100%; justify-self: stretch; text-align: center; justify-content: center; }
+
+  /* Cookie banner */
+  .cookie-banner { padding: 16px; bottom: 12px; left: 12px; right: 12px; }
+}
+
+/* =========================================================
+   RESPONSIVE — Très petits écrans (<= 480px)
+   ========================================================= */
+@media (max-width: 480px) {
+  /* Arrière-plan minimal : halo seul, plus d'engrenage visible */
+  .gear-1 { width: 200px; height: 200px; opacity: 0.4; }
+  .particles,
+  .scan-beam { display: none; }
+  .glow-a { width: 300px; height: 300px; }
+
+  .section { padding: 56px 16px; }
+  .section-head { margin-bottom: 28px; }
+
+  .hero { padding: 92px 16px 48px; }
+  .hero-tag { font-size: 12px; padding: 6px 14px; margin-bottom: 24px; }
+  .hero-stats { flex-direction: column; gap: 18px; padding-top: 24px; }
+  .hero-stats .stat { width: 100%; }
+
+  .lang-grid { grid-template-columns: 1fr; }
+
+  .nav { padding: 0 16px; }
 }
